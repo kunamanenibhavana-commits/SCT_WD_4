@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | Professional To-Do Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <h2>TaskFlow</h2>
+
+        </div>
+
+        <div class="welcome">
+
+            <h3>Welcome 👋</h3>
+
+            <p>Stay organized and complete your daily goals.</p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="card">
+
+                <i class="fa-solid fa-list"></i>
+
+                <div>
+
+                    <h2 id="totalTasks">0</h2>
+
+                    <span>Total Tasks</span>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+
+                    <h2 id="pendingTasks">0</h2>
+
+                    <span>Pending</span>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <div>
+
+                    <h2 id="completedTasks">0</h2>
+
+                    <span>Completed</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header>
+
+            <div>
+
+                <h1>Task Dashboard</h1>
+
+                <p id="today"></p>
+
+            </div>
+
+        </header>
+
+        <!-- Progress -->
+
+        <section class="progress-box">
+
+            <div class="progress-text">
+
+                <span>Overall Progress</span>
+
+                <span id="progressValue">0%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Add Task -->
+
+        <section class="add-box">
+
+            <h2>Add New Task</h2>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter task title">
+
+            <div class="row">
+
+                <input type="date" id="taskDate">
+
+                <input type="time" id="taskTime">
+
+                <select id="priority">
+
+                    <option>Low</option>
+                    <option selected>Medium</option>
+                    <option>High</option>
+
+                </select>
+
+            </div>
+
+            <button id="addTask">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Task
+
+            </button>
+
+        </section>
+
+        <!-- Search -->
+
+        <section class="toolbar">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search tasks...">
+
+            <div class="filters">
+
+                <button class="filter active" data-filter="all">All</button>
+
+                <button class="filter" data-filter="pending">Pending</button>
+
+                <button class="filter" data-filter="completed">Completed</button>
+
+            </div>
+
+        </section>
+
+        <!-- Tasks -->
+
+        <ul id="taskList"></ul>
+
+    </main>
+
+</div>
+
+<!-- Edit Modal -->
+
+<div class="modal" id="editModal">
+
+    <div class="modal-content">
+
+        <h2>Edit Task</h2>
+
+        <input type="text" id="editTask">
+
+        <input type="date" id="editDate">
+
+        <input type="time" id="editTime">
+
+        <select id="editPriority">
+
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+
+        </select>
+
+        <div class="modal-buttons">
+
+            <button id="saveEdit">Save</button>
+
+            <button id="cancelEdit">Cancel</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
